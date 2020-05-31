@@ -1,0 +1,436 @@
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* SCROLLBR */
+::-webkit-scrollbar {width: 4px}::-webkit-scrollbar-track {background: #B7B7B7; border-radius: 10px}::-webkit-scrollbar-thumb {background: #121212; border-radius: 10px}
+
+/*ANIMAZIONi*/
+@-webkit-keyframes pulse {from {-webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1)} 50% {-webkit-transform: scale3d(1.05, 1.05, 1.05); transform: scale3d(1.05, 1.05, 1.05)} to {-webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1)}}
+
+@-webkit-keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+/*EFFETTO IMMAGINI PER TUTTA LA PAGINA */
+img {	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .1s ease-in-out;
+	transition: .3s ease-in-out;}
+
+figure:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+
+/* inizio stile */
+
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	font-size: 15px;
+	font-weight: 300;
+	background-color: #f0f0f0;
+	transition: all .3s ease-out;
+    }
+
+/* colore e stile dei link di tutta la pagina */
+a {
+	text-decoration: none;
+	color: #141414;
+    }
+
+/* menu fissato in alto */
+.menu {
+	background-color: #fff;
+	box-shadow: 0 1px 5px rgba(2, 2, 5, .1); -moz-box-shadow: -2px 1px 2px rgba(0, 0, 0, .1);
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	z-index: 1;
+    }
+
+.menuconlink {
+	display: flex;
+	justify-content: space-between;
+	line-height: 50px;
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+.menuconlink nav li {
+	display: inline;
+    margin-left: 10px;
+    }
+
+.menuconlink nav li:first-of-type {
+	margin-left: 0;
+    }
+
+
+.menuconlink .logo, .menuconlink nav {
+	 display: flex;
+	 align-items: center;
+     }
+
+.menuconlink .logo a {
+	/* logo animato all'entrata*/
+	-webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	/*stile logo*/
+	color: #121212;
+	text-transform: uppercase;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	font-size: 1.5em;
+    }
+
+/* HEADER PRESENTAZIONE*/
+header {
+	background: #0b0b0b url("img/sfondoheader.png");
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 50%;
+	position: relative;
+	top: 50px;
+	overflow: hidden;
+     }
+
+header img {
+   position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+
+header img:hover {
+	animation: pulse 0.5s ease-out;
+    }
+
+header .Titolo img {
+	top: -70px;
+    }
+
+header .desc img {
+	top: 70px;
+    }
+
+.copertina {
+	position: relative;
+    width: 100%;
+	min-height: 500px;
+    }
+
+/* inizio sezioni del portfolio*/
+.container {
+	position: relative;
+	margin: 0 auto;
+    }
+
+.sezioni {
+	padding-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	max-width: 960px;
+	min-height: 250px;
+    }
+
+.sezioni .uno h1, .sezioni2 .quattro h2, .my_progects h1 {
+    padding-bottom: 20px;
+	font-size: 2.5em;
+	text-transform: uppercase;
+    }
+
+.sezioni .uno {
+	position: relative;
+	text-align: left;
+	background-color: #121212;
+	color: #fff;
+    }
+
+.sezioni .due {
+	position: relative;
+	width: auto;
+    }
+
+.sezioni .due img {
+	border: 4px solid #fff;
+	box-shadow: 0 1px 5px rgba(2, 2, 5, .1); -moz-box-shadow: -2px 1px 2px rgba(0, 0, 0, .1);
+	max-height: 250px;
+    }
+
+.sezioni2 {
+	padding-top: -50px;
+	align-items: center;
+	max-width: 960px;
+	min-height: 250px;
+    }
+
+.sezioni2 .quattro {
+	background-color: #fff;
+	box-shadow: 0 1px 5px rgba(2, 2, 5, .1); -moz-box-shadow: -2px 1px 2px rgba(0, 0, 0, .1);
+	color: #121212;
+	z-index: -1;
+    }
+
+.sezioni2 .tre img {
+	border: 4px solid #121212;
+	max-height: 250px;
+    }
+
+/*inizio Galleria lavori*/
+.container_lavori {
+	background-color: #121212;
+}
+
+.works {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.my_progects {
+	color: #fff;
+	padding: 50px 0px 0 0;
+}
+
+.my_progects a {
+	color: #fff;
+}
+
+.my_progects .buttons {
+	margin-top: 30px;
+}
+
+.my_progects .buttons a {
+	font-size: 1.3em;
+	font-weight: bold;
+    padding: 5px 15px;
+    border: 3px solid #fff;	
+}
+
+.my_progects .buttons a:hover {
+	background-color: #FFFFFF;
+	color: #121212;
+	transition: all .3s ease-out;
+}
+
+.design {
+	padding: 30px 0 0 0;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+figcaption{
+	position: relative;
+	bottom: 50px;
+	text-transform: uppercase;
+	width: 250px;
+	margin: 0 auto;
+  background-color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+.design .section img {
+	margin: 10px;
+	width: 250px;
+	height: 150px;
+	border: 5px solid #fff
+}
+
+/* FOOTER */
+footer {
+	background-color: #1B1B1B;
+	color: #A7A7A7;
+	font-size: 0.8em;
+}
+
+.larghezza_footer {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	padding: 10px;
+}
+
+.follow {
+	display: flex;
+    align-items: center;
+}
+
+.follow img { 
+	max-height: 40px;
+	margin: 0px 5px;
+}
+
+.follow a {color: #A7A7A7;}
+
+
+/* FIXED SCHERMO MOBILE E TABLET CON MAX 600PX*/
+@media only screen and (max-width: 600px) {
+	.copertina {
+	min-height: 400px;
+    }
+	
+	header {
+	background-size: 65%;
+    }
+	
+	.container {
+	width: 100%;
+	top: 30px;
+	margin: 0 auto;
+	}
+	
+	.menu {
+		height: 70px;
+	}
+	
+	.menuconlink {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 35px;
+    }
+	
+	.sezioni .uno h1, .sezioni2 .quattro h2 {
+    padding-bottom: 20px;
+	font-size: 2em;
+	text-transform: uppercase;
+    }
+	
+	.sezioni, .sezioni2 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    }
+	
+	.sezioni2 {
+		position: relative;
+		top: -50px;
+	}
+	
+	.sezioni .uno {
+    order: 2;
+	bottom: 30px;
+	padding: 70px 30px 70px 30px;
+	width: 100%;
+	}
+	
+	.sezioni .due {
+	order: 1;
+	}
+
+.sezioni2 .quattro {
+	position: relative;
+	bottom: 30px;
+	padding: 70px 30px 30px 30px;
+	width: 100%;
+    }
+	
+.works {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 200px;
+}
+	
+.my_progects {
+	text-align: center;
+	width: 100%;
+}
+	
+.design {
+	width: 100%;
+}
+	
+.larghezza_footer {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+	
+.creditsmail {
+	text-align: center
+}
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 601px) {
+	.container {
+	position: relative;
+	top: 40px;
+	max-width: 960px;
+	padding: 50px 0;
+    }
+	
+	.sezioni2 {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	}
+	
+	.sezioni .uno {
+	padding: 30px 70px 70px 30px;
+	width: 70%;
+    }
+	
+	.sezioni .due {
+	bottom: 50px;
+	left: -30px;
+    }
+	
+	.sezioni2 .tre {
+	position: relative;
+	bottom: 30px;
+	left: 50px;
+	width: auto;
+    }
+	
+	.sezioni2 .quattro {
+	text-align: right;
+	position: relative;
+	bottom: 100px;
+	padding: 50px 30px 40px 70px;
+	width: 70%;
+    }
+	
+	.my_progects {
+	padding: 50px 30px 0 0;
+	text-align: left;
+	width: 33.3%;
+}
+	
+	.design {
+	justify-content: space-around;
+	width: 66.6%;
+}
+	
+	.creditsmail {
+	max-width: 50%;
+	text-align: right
+}
+}
